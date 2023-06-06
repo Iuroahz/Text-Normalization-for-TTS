@@ -11,16 +11,13 @@ categories = ['ADDRESS', 'CARDINAL', 'DECIMAL', 'ELECTRONIC', 'DATE', 'DIGIT', '
               'MONEY', 'ORDINAL', 'TELEPHONE', 'TIME', 'VERBATIM']
 
 for category in tqdm(categories):
-    # Initialize variables for counting the number of lines and the total similarity score
     lines = 0
     total_similarity = 0
 
-    # Open the CSV file and read its contents
     with open('rs_align_96.csv', 'r', encoding='utf-8') as file:
         reader = csv.reader(file)
-        # Skip the header row
+        # Skip the header 
         next(reader)
-        # Loop through the rows in the file
         for row in reader:
             # Check if the first column is the current category
             if row[0] == category and row[2] and row[3]:
@@ -31,8 +28,7 @@ for category in tqdm(categories):
                 if similarity > 0:
                     total_similarity += similarity
                     lines += 1
-
-        # Calculate the mean similarity score
+                    
         if lines > 0:
             mean_similarity = total_similarity / lines
             print(f"Total similarity score for {category}: {total_similarity}")
