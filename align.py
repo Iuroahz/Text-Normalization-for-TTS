@@ -7,17 +7,15 @@ from tqdm import tqdm
 
 start_time = datetime.datetime.now()
 
-'''with open('output_96_sent_rSpeak_copy.txt', 'r', encoding = "ISO-8859-1") as f:
+with open('output_6_sent_rSpeak_copy.txt', 'r', encoding = "ISO-8859-1") as f:
     sentences = [line.strip() for line in f]
 
-# Open the CSV file for writing.
-with open('with_sent_96.csv', 'w', newline='') as csvfile:
+with open('with_sent_6.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
 
-    # Write the header row.
+    # header
     writer.writerow(['Semiotic Class', 'Input Token', 'Output Token', 'RS'])
-
-    # Loop through the rows of the CSV file.
+    
     with open('output_96.csv', 'r') as csvfile_in:
         reader = csv.reader(csvfile_in)
         next(reader)  # Skip header row.
@@ -32,7 +30,7 @@ with open('with_sent_96.csv', 'w', newline='') as csvfile:
                     pass
 
             # Write the row with the current sentence.
-            writer.writerow([row[0], row[1], row[2], current_sentence])'''
+            writer.writerow([row[0], row[1], row[2], current_sentence])
 
 
 df = pd.read_csv("with_sent_6.csv", header=0)
