@@ -5,8 +5,6 @@ from collections import defaultdict
 
 warnings.filterwarnings('ignore')
 
-# with open('/data1/xczhou/project/test_code2/NeMo-text-processing/norm_texts_weights_100_EngConf.txt_-1_0.2.pkl', 'rb') as f:
-# with open('/data1/xczhou/project/test_code2/NeMo-text-processing/norm_texts_weights_100_input_91_sent_output_91_sentences_merged.txt_-1_0.2.pkl', 'rb') as f:
 with open('norm_texts_weights_100_input_91_sent_output_91_sentences_merged.txt_-1_0.2.pkl', 'rb') as f:
     data = pickle.load(f)
 
@@ -26,4 +24,3 @@ def process_data(data):
 
 result = process_data(data)
 save_to_txt(result, "result_sentence.txt")
-print('')
